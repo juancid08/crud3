@@ -26,40 +26,40 @@
 
                     <label>
                         <i class='bx bx-user' ></i>
-                        <input type="text" id="nombre" placeholder="Juan" onblur="resetear('nombre')">
+                        <input type="text" id="nombre" placeholder="Juan" onblur="resetearInput('nombre')">
                         <span id="errorNombre" class="error"></span>
                     </label>
 
                     <label>
                         <i class='bx bx-user' ></i>
-                        <input type="text" id="apellidos" placeholder="Cid Benítez" onblur="resetear('apellidos')">
+                        <input type="text" id="apellidos" placeholder="Cid Benítez" onblur="resetearInput('apellidos')">
                         <span id="errorApellidos" class="error"></span>
                     </label>                    
 
                     <label>
                         <i class='bx bx-id-card' ></i>
-                        <input type="text" id="dni" placeholder="21057207V" onblur="resetear('dni')">
+                        <input type="text" id="dni" placeholder="21057207V" onblur="resetearInput('dni')">
                         <span id="errorDNI" class="error"></span>
                     </label>
                     
 
                     <label>
                         <i class='bx bx-phone'></i>
-                        <input type="text" id="telefono" placeholder="642061116" onblur="resetear('telefono')">
+                        <input type="text" id="telefono" placeholder="642061116" onblur="resetearInput('telefono')">
                         <span id="errorTelefono" class="error"></span>
                     </label>
 
                     <label>
                         <i class='bx bx-envelope' ></i>
-                        <input type="text" id="email" placeholder="juancid07@gmail.com" onblur="resetear('email')">
+                        <input type="text" id="email" placeholder="juancid07@gmail.com" onblur="resetearInput('email')">
                         <span id="errorEmail" class="error"></span>
                     </label>
 
                     <label class="select-label">
                         <i class='bx bx-briefcase'></i>
-                        <select class="custom-select" id="select-option" onchange="resetear('select-option')">
-                            <option value="" disabled selected>Elige uno</option>
-                            <option value="1">Administración</option>
+                        <select class="custom-select" id="select-option" onchange="resetearInput('select-option')">
+                            <option value="" disabled>Elige uno</option>
+                            <option value="1" selected>Administración</option>
                             <option value="2">Finanzas</option>
                             <option value="3">Comercial</option>
                             <option value="4">RRHH</option>
@@ -70,7 +70,7 @@
                     <h3 class="texto">Sexo</h3>
                     <div class="gender-container">
                         <label>
-                            <input type="radio" name="gender" value="masculino" >
+                            <input type="radio" name="gender" value="masculino" checked>
                             Masculino
                         </label>
                     
@@ -102,5 +102,6 @@
     </div>
 
     <script src="./js/modificacion.js"></script>
+
 </body>
 </html>

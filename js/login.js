@@ -84,7 +84,7 @@ function validarFormulari() {
     let regexTelefono = /^\d{9}$/; 
     let regexNombre = /^(?![\s\S]*[\d])[\s\S]{2,}$/;
     let regexApellidos = /^(?![\s\S]*[\d])[\s\S]{2,}$/;
-    let regexDNI = /^\d{8}[A-Z]$/;
+    let regexDNI = /^\d{8}[A-Za-z]$/;
     let regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/;
 
 
@@ -187,7 +187,7 @@ function validarFormulari() {
 
 }
 
-function resetear(id) {
+function resetearInput(id) {
     document.getElementById(id).style.borderColor = "lightgray";
-    
+    document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1)).textContent = ""; // Oculta el mensaje de error
 }
