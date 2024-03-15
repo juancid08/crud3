@@ -6,16 +6,14 @@ const btnSignIn = document.getElementById("sign-in"),
 btnSignIn.addEventListener("click", e => {
     formRegister.classList.add("hide");
     formLogin.classList.remove("hide")
-})
-
+});
 
 btnSignUp.addEventListener("click", e => {
     formLogin.classList.add("hide");
     formRegister.classList.remove("hide")
-})
-/*login */
+});
+
 function validarFormulario() {
-    
     let correcto = true;
     let usuario = document.getElementById("usuario").value;
     let contrasena = document.getElementById("contrasena").value;
@@ -24,7 +22,6 @@ function validarFormulario() {
     let regexUsuario = /^[a-zA-Z0-9]{8,12}$/;
     let regexContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,15}$/;
 
-    
     if (usuario === "") {
         errorUsuario.textContent = "El campo usuario no puede estar vacío.";
         document.getElementById('usuario').style.borderColor = "red";
@@ -38,7 +35,6 @@ function validarFormulario() {
         document.getElementById('usuario').style.borderColor = "lightgray";
     }
 
-    
     if (contrasena === "") {
         errorContrasena.textContent = "El campo contraseña no puede estar vacío.";
         document.getElementById('contrasena').style.borderColor = "red";
@@ -52,18 +48,15 @@ function validarFormulario() {
         document.getElementById('contrasena').style.borderColor = "lightgray";
     }
 
-    
     return correcto;
 }
 
-function resetear(id) {
-    document.getElementById(id).style.borderColor = "lightgray";
-    document.getElementById(id + 'Help').style.visibility = "hidden";
-}
 
-/*VALIDAR INSERCICIÓN */
+
+
+
 function validarFormulari() {
-    let correcto = false;
+    let correcto = true;
     let checked = false;
     let telefono = document.getElementById("telefono").value;
     let nombre = document.getElementById("nombre").value;
@@ -86,7 +79,6 @@ function validarFormulari() {
     let regexApellidos = /^(?![\s\S]*[\d])[\s\S]{2,}$/;
     let regexDNI = /^\d{8}[A-Za-z]$/;
     let regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/;
-
 
     /*********validación telefono*********************/
     if (telefono === "") {
@@ -124,7 +116,6 @@ function validarFormulari() {
         document.getElementById('apellidos').style.borderColor = "lightgray";
         correcto=false;
     }
-    
 
     /*********validación dni*********************/
     if (dni === "" || /^\s+$/.test(dni) || !regexDNI.test(dni)) {
@@ -136,7 +127,7 @@ function validarFormulari() {
         document.getElementById('dni').style.borderColor = "lightgray";
         correcto=false;
     }
-    
+
     /*********validación email*********************/
     if (email === "" || !regexEmail.test(email)) {
         errorEmail.textContent = "El correo electrónico no es válido.";
@@ -183,11 +174,19 @@ function validarFormulari() {
     }
 
     return correcto;
-
-
+}
+function resetearError(id) {
+    document.getElementById(id).innerText = "";
 }
 
 function resetearInput(id) {
-    document.getElementById(id).style.borderColor = "lightgray";
-    document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1)).textContent = ""; // Oculta el mensaje de error
+    let inputElement = document.getElementById(id);
+    let errorElement = document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1));
+    if (inputElement.value !== "") {
+        inputElement.style.borderColor = "lightgray";
+        if (errorElement) {
+            errorElement.textContent = ""; 
+        }
+    }
+    document.getElementById(id).innerText = "";
 }

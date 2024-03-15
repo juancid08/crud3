@@ -136,8 +136,19 @@ function validarFormulari() {
 
 
 }
-
-function resetearInput(id) {
-    document.getElementById(id).style.borderColor = "lightgray";
-    document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1)).textContent = ""; // Oculta el mensaje de error
+function resetearError(id) {
+    document.getElementById(id).innerText = "";
 }
+function resetearInput(id) {
+    let inputElement = document.getElementById(id);
+    let errorElement = document.getElementById("error" + id.charAt(0).toUpperCase() + id.slice(1));
+    if (inputElement.value !== "") {
+        inputElement.style.borderColor = "lightgray";
+        if (errorElement) {
+            errorElement.textContent = ""; 
+        }
+    }
+    document.getElementById(id).innerText = "";
+}
+
+

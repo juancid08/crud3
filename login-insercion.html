@@ -40,7 +40,7 @@
 
                     <label>
                         <i class='bx bx-id-card' ></i>
-                        <input type="text" id="dni" placeholder="DNI" onblur="resetearInput('dni')">
+                        <input type="text" id="dni" placeholder="DNI" onblur="resetearInput('errorDNI')">
                         <span id="errorDNI" class="error"></span>
                     </label>
                     
@@ -57,9 +57,9 @@
                         <span id="errorEmail" class="error"></span>
                     </label>
 
-                    <label class="select-label">
+                    <label class="select-label" >
                         <i class='bx bx-briefcase'></i>
-                        <select class="custom-select" id="select-option" onchange="resetearInput('select-option')">
+                        <select class="custom-select" id="select-option" onclick="resetearError('errorSelect')">
                             <option value="" disabled selected>Elige uno</option>
                             <option value="1">Administración</option>
                             <option value="2">Finanzas</option>
@@ -71,25 +71,26 @@
                     
                     <h3 class="texto">Sexo</h3>
                     <div class="gender-container">
-                        <label>
+                        <label onclick="resetearError('errorGender')">
                             <input type="radio" name="gender" value="masculino" >
                             Masculino
                         </label>
                     
-                        <label>
+                        <label onclick="resetearError('errorGender')">
                             <input type="radio" name="gender" value="femenino">
                             Femenino
                         </label>
                     
-                        <label>
+                        <label onclick="resetearError('errorGender')">
                             <input type="radio" name="gender" value="otros">
-                            Otros
+                            Otro
                         </label>
                     </div>
                     <span id="errorGender" class="error"></span>
-
+                
+                
                     <label class="checkbox-label">
-                        <div class="checkbox-container">
+                        <div class="checkbox-container" onclick="resetearError('errorCheckbox')">
                             <input type="checkbox" id="mayoria" name="mayoria">
                             <p class="terminos">Acepto que soy mayor de edad</p>
                             <span id="errorCheckbox" class="error"></span>
@@ -102,11 +103,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <div class="container-form login hide">
         <div class="information">

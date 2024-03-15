@@ -38,7 +38,7 @@
 
                     <label>
                         <i class='bx bx-id-card' ></i>
-                        <input type="text" id="dni" placeholder="21057207V" onblur="resetearInput('dni')">
+                        <input type="text" id="dni" placeholder="21057207V" onblur="resetearInput('errorDNI')">
                         <span id="errorDNI" class="error"></span>
                     </label>
                     
@@ -81,18 +81,19 @@
                     
                         <label>
                             <input type="radio" name="gender" value="otros">
-                            Otros
+                            Otro
                         </label>
                     </div>
                     <span id="errorGender" class="error"></span>
 
                     <label class="checkbox-label">
-                        <div class="checkbox-container">
+                        <div class="checkbox-container" onclick="resetearError('errorCheckbox')">
                             <input type="checkbox" id="mayoria" name="mayoria">
                             <p class="terminos">Acepto que soy mayor de edad</p>
                             <span id="errorCheckbox" class="error"></span>
                         </div>
                     </label>
+                    
                     
                     <input type="submit" value="Registrarse">
 
